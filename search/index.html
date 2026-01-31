@@ -10,19 +10,26 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="logo">
-            <div class="logo-icon">📚</div>
-            履修登録ナビ
+        <div class="header-left">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="3" width="18" height="18" rx="2" fill="#1E88E5"/>
+                    <path d="M8 8L16 16M16 8L8 16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h1 class="site-title">キャンバスシェア</h1>
         </div>
-        <nav class="nav">
-            <a href="#" class="nav-link">時間割作成</a>
-            <a href="#" class="nav-link active">コース検索</a>
-            <a href="#" class="nav-link">掲示板</a>
-            <a href="#" class="nav-link">マイページ</a>
+        <nav class="header-nav">
+            <a href="../profile/index.html" class="nav-link">マイページ</a>
+            <a href="../template/index.html" class="nav-link">時間割テンプレート</a>
+            <a href="../search/index.html" class="nav-link active">授業詳細</a>
+            <a href="../upload/index.html" class="nav-link">
+                <span class="icon-plus">⊕</span> 投稿作成
+            </a>
+            <a href="../auth/login_signup.html" class="logout-btn">ログアウト</a>
         </nav>
-        <div class="user-actions">
-            <button class="icon-btn">🔔</button>
-            <button class="icon-btn">👤</button>
+        <div class="header-right">
+            <div class="user-avatar"></div>
         </div>
     </header>
 

@@ -11,90 +11,107 @@ body {
 }
 
 .header {
-    background-color: white;
-    padding: 15px 30px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 2rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.logo-icon {
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 8px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 18px;
 }
 
-.nav {
-    display: flex;
-    gap: 30px;
-    align-items: center;
+.logo svg {
+    width: 32px;
+    height: 32px;
 }
 
-.nav a {
-    text-decoration: none;
-    color: #666;
-    font-size: 14px;
-    padding-bottom: 6px;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.nav a:hover {
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 600;
     color: #333;
 }
 
-.nav a.active {
-    color: #2563eb;
-    border-bottom-color: #2563eb;
-}
-
-.user-icon {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-color: #ffd9a0;
+.header-nav {
     display: flex;
     align-items: center;
+    gap: 2rem;
+    flex: 1;
     justify-content: center;
-    cursor: pointer;
 }
 
-.bell-icon {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    position: relative;
+.nav-link {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.nav-link:hover {
+    color: #333;
+}
+
+.nav-link.active {
+    color: #333;
+    border-bottom-color: #1E88E5;
+}
+
+.icon-plus {
+    font-size: 1.1rem;
 }
 
 .logout-btn {
-    padding: 8px 20px;
-    background-color: #ef4444;
+    background-color: #1E88E5;
     color: white;
     border: none;
+    padding: 0.6rem 1.5rem;
     border-radius: 6px;
-    font-size: 13px;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logout-btn:hover {
-    background-color: #dc2626;
+    background-color: #1976D2;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e0c3a0 0%, #d4a574 100%);
 }
 
 .container {
