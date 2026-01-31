@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>履修登録ナビ - コース検索</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">📚</div>
+            履修登録ナビ
+        </div>
+        <nav class="nav">
+            <a href="#" class="nav-link">時間割作成</a>
+            <a href="#" class="nav-link active">コース検索</a>
+            <a href="#" class="nav-link">掲示板</a>
+            <a href="#" class="nav-link">マイページ</a>
+        </nav>
+        <div class="user-actions">
+            <button class="icon-btn">🔔</button>
+            <button class="icon-btn">👤</button>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <div class="search-container">
+        <div class="search-box">
+            <div class="search-grid">
+                <div class="input-group">
+                    <label class="input-label">キーワード</label>
+                    <input type="text" class="search-input" placeholder="授業名・教授名・内容など">
+                </div>
+                <div class="input-group">
+                    <label class="input-label">大学・キャンパス</label>
+                    <select class="search-input" id="campus-select">
+                        <option value="">🎓 指定なし</option>
+
+                        <optgroup label="早稲田大学">
+                            <option value="waseda_waseda">早稲田キャンパス（早稲田）</option>
+                            <option value="waseda_toyama">戸山キャンパス（早稲田）</option>
+                            <option value="waseda_nishiwaseda">西早稲田キャンパス（西早稲田）</option>
+                            <option value="waseda_tokorozawa">所沢キャンパス（所沢）</option>
+                            <option value="waseda_higashifushimi">東伏見キャンパス（東伏見）</option>
+                            <option value="waseda_kitamachi">北九州キャンパス（北九州）</option>
+                        </optgroup>
+
+                        <optgroup label="慶應義塾大学">
+                            <option value="keio_mita">三田キャンパス（三田）</option>
+                            <option value="keio_hiyoshi">日吉キャンパス（日吉）</option>
+                            <option value="keio_yagami">矢上キャンパス（矢上）</option>
+                            <option value="keio_shonan">湘南藤沢キャンパス（SFC）</option>
+                            <option value="keio_shinagawa">芝共立キャンパス（芝共立）</option>
+                        </optgroup>
+
+                        <optgroup label="明治大学">
+                            <option value="meiji_surugadai">駿河台キャンパス（御茶ノ水）</option>
+                            <option value="meiji_izumi">和泉キャンパス（明大前）</option>
+                            <option value="meiji_ikuta">生田キャンパス（生田）</option>
+                            <option value="meiji_nakano">中野キャンパス（中野）</option>
+                        </optgroup>
+
+                        <optgroup label="青山学院大学">
+                            <option value="agu_aoyama">青山キャンパス（渋谷）</option>
+                            <option value="agu_sagamihara">相模原キャンパス（相模原）</option>
+                        </optgroup>
+
+                        <optgroup label="立教大学">
+                            <option value="rikkyo_ikebukuro">池袋キャンパス（池袋）</option>
+                            <option value="rikkyo_niiza">新座キャンパス（新座）</option>
+                        </optgroup>
+
+                        <optgroup label="中央大学">
+                            <option value="chuo_tama">多摩キャンパス（多摩）</option>
+                            <option value="chuo_korakuen">後楽園キャンパス（後楽園）</option>
+                            <option value="chuo_ichigaya">市ヶ谷田町キャンパス（市ヶ谷田町）</option>
+                        </optgroup>
+
+                        <optgroup label="法政大学">
+                            <option value="hosei_ichigaya">市ヶ谷キャンパス（市ヶ谷）</option>
+                            <option value="hosei_koganei">小金井キャンパス（小金井）</option>
+                            <option value="hosei_tama">多摩キャンパス（多摩）</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label class="input-label">曜日</label>
+                    <select class="search-input" id="weekday-select">
+                        <option value="">📅 指定なし</option>
+                        <option value="mon">月曜</option>
+                        <option value="tue">火曜</option>
+                        <option value="wed">水曜</option>
+                        <option value="thu">木曜</option>
+                        <option value="fri">金曜</option>
+                        <option value="sat">土曜</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label class="input-label">時限</label>
+                    <select class="search-input" id="period-select">
+                        <option value="">🕒 指定なし</option>
+                        <option value="1">1限</option>
+                        <option value="2">2限</option>
+                        <option value="3">3限</option>
+                        <option value="4">4限</option>
+                        <option value="5">5限</option>
+                    </select>
+                </div>
+                <button class="search-btn">
+                    🔍 検索
+                </button>
+            </div>
+            <div class="filters">
+                <div class="filter-chip active">すべて</div>
+                <div class="filter-chip">出席なし</div>
+                <div class="filter-chip">対面のみ</div>
+                <div class="filter-chip">オンライン</div>
+                <div class="filter-chip">テスト中心</div>
+                <div class="filter-chip">レポート中心</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results -->
+    <div class="results-container">
+        <div class="results-header">
+            <div class="results-count">
+                検索結果 <span>1,240</span>件
+            </div>
+            <button class="sort-btn">
+                ⬇️ 単位取得率順
+            </button>
+        </div>
+
+        <!-- Course List -->
+        <div class="course-list">
+            <div class="course-card selected">
+                <button class="bookmark-btn active">📌</button>
+                <div class="course-tags">
+                    <span class="course-tag tag-required">受験選択可</span>
+                    <span class="course-tag tag-year">2単位</span>
+                    <span class="course-tag tag-report">レポート中心</span>
+                </div>
+                <div class="course-title">現代政治理論 A</div>
+                <div class="course-info">
+                    <span>👨‍🏫 佐藤 健一 教授</span>
+                    <span>📅 月曜 2限</span>
+                    <span>🏫 早稲田キャンパス</span>
+                </div>
+                <div class="course-stats">
+                    <div class="stat">
+                        <div class="stat-label">単位取得率</div>
+                        <div class="stat-value high">94.2%</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">平均GPA</div>
+                        <div class="stat-value gpa-value">3.12</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <button class="bookmark-btn">📌</button>
+                <div class="course-tags">
+                    <span class="course-tag tag-required">選択必修</span>
+                    <span class="course-tag tag-year">2単位</span>
+                    <span class="course-tag tag-report">テスト中心</span>
+                </div>
+                <div class="course-title">ミクロ経済学入門</div>
+                <div class="course-info">
+                    <span>👨‍🏫 田中 美咲 教授</span>
+                    <span>📅 月曜 2限</span>
+                    <span>🏫 早稲田キャンパス</span>
+                </div>
+                <div class="course-stats">
+                    <div class="stat">
+                        <div class="stat-label">単位取得率</div>
+                        <div class="stat-value high">82.5%</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-label">平均GPA</div>
+                        <div class="stat-value gpa-value">2.85</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detail Panel -->
+        <div class="detail-panel">
+            <div class="detail-header">
+                <div>
+                    <div class="course-code">コースID: PS102-M1</div>
+                    <div class="course-year-badge">2024年度 春学期</div>
+                </div>
+            </div>
+            
+            <h1 class="detail-title">現代政治理論 A</h1>
+            
+            <div class="detail-meta">
+                <div class="meta-item">👨‍🏫 佐藤 健一 教授</div>
+                <div class="meta-item">📅 月曜 2限 (3月期)</div>
+                <div class="meta-item">📍 3号館 402教室</div>
+            </div>
+            
+            <button class="add-to-schedule-btn">
+                ✅ 時間割に追加
+            </button>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-box-label">単位取得率</div>
+                    <div class="stat-box-value" style="color: #4caf50;">94.2%</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box-label">平均GPA</div>
+                    <div class="stat-box-value" style="color: #1e88e5;">3.12</div>
+                    <div style="font-size: 0.75em; color: #999;">平均より +0.25</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box-label">学生人気度</div>
+                    <div class="stat-box-value stars">★★★★★</div>
+                    <div style="font-size: 0.75em; color: #999;">128人のレビュー</div>
+                </div>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab(0)">📊 成績評価の詳細</div>
+                <div class="tab" onclick="switchTab(1)">💬 学生の口コミ</div>
+            </div>
+            
+            <div class="tab-content active" id="tab-0">
+                <div class="evaluation-item">
+                    <div class="eval-header">
+                        <span class="eval-type">📝 テスト形式</span>
+                        <span class="eval-percentage">40%</span>
+                    </div>
+                    <div class="eval-note">
+                        <strong>記述式 (持ち込み不可)</strong>
+                    </div>
+                    <p class="eval-description">期末期間中に実施。講義内の重要キーワードを使用した論述問題。</p>
+                </div>
+                
+                <div class="evaluation-item">
+                    <div class="eval-header">
+                        <span class="eval-type">📄 レポート</span>
+                        <span class="eval-percentage">30%</span>
+                    </div>
+                    <p class="eval-description">1500文字程度。学期末にA4から2頁程度、特定の政治思想家を自由な視点から分析。</p>
+                </div>
+                
+                <div class="evaluation-item">
+                    <div class="eval-header">
+                        <span class="eval-type">👥 平常点 (出席)</span>
+                        <span class="eval-percentage">30%</span>
+                    </div>
+                    <p class="eval-description">出席 + ミニレポート。毎回の出席確認と、講義終了時の短い感想文(200字程度)。</p>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="tab-1">
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="review-author">法学部生 3年</span>
+                        <span class="review-date">2023年度受講</span>
+                    </div>
+                    <p class="review-text">「講義は非常に論理的で分かりやすい。試験は記述中心だが、配布資料をしっかり読み込めば高得点が狙える。」</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="review-author">法学部 2年</span>
+                        <span class="review-date">2023年度受講</span>
+                    </div>
+                    <p class="review-text">「毎回のミニレポートが少し大変だが、その分外部の最難関試験(就職など)には準備的。GPAを稼ぎたい人にもおすすめ。」</p>
+                </div>
+                
+                <button class="show-more-btn">すべての口コミを見る (128件)</button>
+            </div>
+            
+            <div class="warning-box">
+                <div class="warning-title">
+                    ⚠️ 履修上の重要注意
+                </div>
+                <p class="warning-text">出席が評価の50%を占めるため、3回以上の無断欠席は単位取得が難しくなります。期末レポートの提出期限は1分でも過ぎると受理されません。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
