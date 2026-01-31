@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>プロフィール登録 - 大学プラットフォーム</title>
+<link rel="stylesheet" href="./style.css">
+<script src="./script.js"></script>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <a href="#" class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+    </div>
+    大学プラットフォーム
+  </a>
+  <nav>
+    <a href="#">ヘルプ</a>
+    <a href="#">ログイン</a>
+    <a href="#" class="btn-register">新規登録</a>
+  </nav>
+</header>
+
+<!-- Main Content -->
+<main>
+  <div class="page-header">
+    <h1 class="page-title">プロフィール登録</h1>
+    <p class="page-subtitle">情報を入力して、同じ大学の学生と履修情報を共有しましょう</p>
+  </div>
+
+  <div class="form-card">
+    <!-- 氏名 & 学年 -->
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">氏名</label>
+        <input class="input" type="text" placeholder="例：山田 太郎" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">学年</label>
+        <select class="input">
+          <option>選択してください</option>
+          <option>1年生</option>
+          <option>2年生</option>
+          <option>3年生</option>
+          <option>4年生</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 大学名 -->
+    <div class="form-group">
+      <label class="form-label">大学名</label>
+      <input class="input input-search" type="text" placeholder="例：東京大学" />
+    </div>
+
+    <!-- 学部 & 学科 -->
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">学部</label>
+        <input class="input" type="text" placeholder="例：文学部" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">学科</label>
+        <input class="input" type="text" placeholder="例：哲学科" />
+      </div>
+    </div>
+
+    <!-- 現在の状況 -->
+    <div class="form-group">
+      <label class="form-label">現在の状況</label>
+      <div class="status-grid">
+        <div class="status-card selected" onclick="selectStatus(this)">
+          <div class="status-icon">🎉</div>
+          <div class="status-label">新入生</div>
+        </div>
+        <div class="status-card" onclick="selectStatus(this)">
+          <div class="status-icon">📚</div>
+          <div class="status-label">在校生</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 履修情報のアップロード -->
+    <div class="upload-section">
+      <div class="upload-header">
+        <label class="form-label">履修情報のアップロード</label>
+        <span class="upload-status">在校生のみ</span>
+      </div>
+      <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+        <div class="upload-icon">
+          <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+        </div>
+        <div class="upload-text">時間割の画像をドラッグ＆ドロップ</div>
+        <div class="upload-hint">またはファイルを選択（JPG, PNG）</div>
+        <input id="fileInput" type="file" accept="image/*" style="display:none" />
+      </div>
+      <p class="upload-note">
+        ＊アップロードされた情報は、新入生が履修を組む際のテンプレートとして運用されます。個人情報は自動で隠されます。
+      </p>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="btn-submit">
+      登録して始める
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+    </button>
+
+    <!-- Form Footer -->
+    <div class="form-footer">
+      「登録して始める」をクリックすることで、当プラットフォームの<a href="#">利用規約</a>および<a href="#">プライバシーポリシー</a>に同意したこととなります。
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">👥</div>
+      <div class="feature-title">同じ学部の人と繋がる</div>
+      <div class="feature-desc">同級の授業を取っている同学年とつながろう</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🧡</div>
+      <div class="feature-title">履修のコツをシェア</div>
+      <div class="feature-desc">先輩のリアルな情報を基準にできます</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🛡️</div>
+      <div class="feature-title">安心の匿名性</div>
+      <div class="feature-desc">ニックネームで友達に情報を提供可能です</div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>© 2024 大学プラットフォーム. All rights reserved.</footer>
+
+
+</body>
+</html>
