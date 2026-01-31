@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロダクト名</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">🎓</div>
+            <span>プロダクト名</span>
+        </div>
+        <nav class="nav">
+            <a href="#" class="active">マイページ</a>
+            <a href="#">時間割テンプレート</a>
+            <a href="#">授業詳細</a>
+            <a href="#">投稿作成</a>
+            <button class="logout-btn">ログアウト</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">新しい投稿を作成</h1>
+        <p class="page-subtitle">あなたの経験や疑問質を シェアして、他の学生を助けましょう。</p>
+
+        <div class="form-card">
+            <div class="tabs">
+                <button class="tab active">授業レビューを投稿</button>
+                <button class="tab">時間割表を投稿</button>
+            </div>
+
+            <div class="form-content">
+                <!-- 授業レビュー投稿のコンテンツ -->
+                <div class="tab-content" id="review-content">
+                    <div class="section">
+                        <h2 class="section-title">
+                            <span class="section-icon">📝</span>
+                            授業レビューの詳細
+                        </h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    授業名<span class="required">*</span>
+                                </label>
+                                <input type="text" class="form-input" placeholder="例：ミクロ経済学基礎">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    担当教授<span class="required">*</span>
+                                </label>
+                                <input type="text" class="form-input" placeholder="例：山田 太郎">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    評価方法（複数選択可）
+                                </label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="eval-checkbox" data-method="test">
+                                        <span>テスト</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="eval-checkbox" data-method="report">
+                                        <span>レポート</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="eval-checkbox" data-method="attendance">
+                                        <span>出席</span>
+                                    </label>
+                                </div>
+                                
+                                <!-- パーセンテージ入力欄（2つ以上選択時に表示） -->
+                                <div id="percentage-section" class="percentage-section" style="display: none;">
+                                    <div class="percentage-title">各評価方法の配分を入力してください</div>
+                                    <div class="percentage-inputs">
+                                        <div class="percentage-item" id="test-percentage" style="display: none;">
+                                            <label>テスト</label>
+                                            <div class="percentage-input-wrapper">
+                                                <input type="number" class="percentage-input" min="0" max="100" placeholder="0">
+                                                <span class="percentage-symbol">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="percentage-item" id="report-percentage" style="display: none;">
+                                            <label>レポート</label>
+                                            <div class="percentage-input-wrapper">
+                                                <input type="number" class="percentage-input" min="0" max="100" placeholder="0">
+                                                <span class="percentage-symbol">%</span>
+                                            </div>
+                                        </div>
+                                        <div class="percentage-item" id="attendance-percentage" style="display: none;">
+                                            <label>出席</label>
+                                            <div class="percentage-input-wrapper">
+                                                <input type="number" class="percentage-input" min="0" max="100" placeholder="0">
+                                                <span class="percentage-symbol">%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="percentage-total">合計: <span id="total-percentage">0</span>%</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">
+                                    難易度
+                                </label>
+                                <div class="rating">
+                                    <span class="star active" data-rating="1">★</span>
+                                    <span class="star active" data-rating="2">★</span>
+                                    <span class="star active" data-rating="3">★</span>
+                                    <span class="star" data-rating="4">★</span>
+                                    <span class="star" data-rating="5">★</span>
+                                    <span class="rating-text">ふつう</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <label class="form-label">一言コメント</label>
+                        <textarea class="textarea" placeholder="この授業のポイント（例：出席重視、課題多めなど）を教えてください。"></textarea>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-title">
+                            <span>ℹ️</span>
+                            投稿時の注意点
+                        </div>
+                        <div class="info-text">
+                            公序良俗に反する内容や、個人を特定できる情報の掲載はお控えください。 質の高いレビューは、後輩たちの貴重な判断材料になります。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 時間割投稿のコンテンツ -->
+                <div class="tab-content" id="timetable-content" style="display: none;">
+                    <div class="section">
+                        <h2 class="section-title">
+                            <span class="section-icon">📅</span>
+                            時間割のアップロード
+                        </h2>
+                        <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                            <div class="upload-icon">☁️</div>
+                            <div class="upload-text">クリックまたはドラッグ＆ドロップで画像をアップロード</div>
+                            <div class="upload-subtext">PNG, JPG, PDF（最大 5MB）</div>
+                        </div>
+                        <input type="file" id="fileInput" accept=".png,.jpg,.jpeg,.pdf">
+                    </div>
+
+                    <div class="section">
+                        <label class="form-label">一言コメント</label>
+                        <textarea class="textarea" placeholder="この時間割のポイント（例：全休あり、空きコマなしなど）を教えてください。"></textarea>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-title">
+                            <span>ℹ️</span>
+                            投稿時の注意点
+                        </div>
+                        <div class="info-text">
+                            公序良俗に反する内容や、個人を特定できる情報の掲載はお控えください。 質の高いレビューは、後輩たちの貴重な判断材料になります。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button class="btn btn-primary">投稿する ▶</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        © 
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
