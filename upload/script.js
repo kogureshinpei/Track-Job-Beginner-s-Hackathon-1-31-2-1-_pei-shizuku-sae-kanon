@@ -214,6 +214,71 @@ logoutBtn.addEventListener('click', function() {
 });
 
 document.querySelector('.btn-primary').addEventListener('click', function() {
+    // 現在アクティブなタブを判定（review-contentが表示されているかどうか）
+    const reviewContent = document.getElementById('review-content');
+    const isReviewMode = window.getComputedStyle(reviewContent).display !== 'none';
+
+    if (isReviewMode) {
+        // === 授業レビューのバリデーション ===
+        
+        // 1. 授業名のチェック
+        const courseName = document.getElementById('courseName').value.trim();
+        if (!courseName) {
+            alert('エラー：授業名を入力してください。');
+            return;
+        }
+
+        // 2. 担当教授のチェック
+        const profName = document.getElementById('profName').value.trim();
+        if (!profName) {
+            alert('エラー：担当教授名を入力してください。');
+            return;
+        }
+
+        // 3. 評価方法の選択チェック
+        const checkedBoxes = document.querySelectorAll('.eval-checkbox:checked');
+        if (checkedBoxes.length === 0) {
+            alert('エラー：評価方法を少なくとも1つ選択してください。');
+            return;
+        }
+
+        // 4. パーセンテージの合計チェック（2つ以上選択されている場合）
+        if (checkedBoxes.length >= 2) {
+            const totalText = document.getElementById('total-percentage').textContent;
+            const total = parseInt(totalText, 10);
+            
+            if (total !== 100) {
+                alert(`エラー：評価割合の合計が100%になるように設定してください。（現在: ${total}%）`);
+                return;
+            }
+            
+            // 各入力欄が空でないかチェック
+            let inputsFilled = true;
+            document.querySelectorAll('.percentage-input').forEach(input => {
+                // 表示されている入力欄のみチェック
+                if (input.closest('.percentage-item').style.display !== 'none') {
+                    if (input.value === '') inputsFilled = false;
+                }
+            });
+            
+            if (!inputsFilled) {
+                alert('エラー：選択した評価方法の割合を入力してください。');
+                return;
+            }
+        }
+
+    } else {
+        // === 時間割投稿のバリデーション ===
+        
+        // ファイルアップロードのチェック
+        const fileInput = document.getElementById('fileInput');
+        if (fileInput.files.length === 0) {
+            alert('エラー：時間割の画像またはPDFファイルをアップロードしてください。');
+            return;
+        }
+    }
+
+    // 全てのフィルタリングを通過した場合
     // submit();
     alert('投稿されました！');
 });
