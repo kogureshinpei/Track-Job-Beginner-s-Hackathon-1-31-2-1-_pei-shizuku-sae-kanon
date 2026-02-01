@@ -53,8 +53,48 @@ const form = document.querySelector('form');
             // 2. 送信をキャンセルする（＝もとのページにとどまる）
             event.preventDefault();
         }
-        // エラーがない場合は、そのままフォームが送信されます
-    });
+
+        if (errorMessage !== "") {
+                // エラーがある場合
+                alert(errorMessage);
+                event.preventDefault(); // 送信をキャンセル
+            } else {
+                // エラーがない場合（バリデーションOK）
+                
+                // ★ここを変更しました★
+                // 1. 本来のフォーム送信（PHPへの送信など）をキャンセル
+                event.preventDefault(); 
+                
+                // 2. profileフォルダのindex.htmlへ遷移
+                window.location.href = '../template/index.html';
+            }
+        });
+
+    // ─── 追加機能: 新入生・在学生の表示切り替えロジック ───
+    const btnNew = document.getElementById('btn-new');
+    const btnCurrent = document.getElementById('btn-current');
+    const uploadArea = document.getElementById('upload-area');
+    const uploadNote = document.getElementById('upload-note');
+    
+    // 現在どちらが選ばれているかを管理するフラグ（初期値は新入生=false）
+    let isCurrentStudent = false;
+
+    if(btnNew && btnCurrent) {
+        // 新入生ボタンクリック時
+        btnNew.addEventListener('click', function() {
+            isCurrentStudent = false;
+            if(uploadArea) uploadArea.style.display = 'none';
+            if(uploadNote) uploadNote.style.display = 'none';
+        });
+
+        // 在学生ボタンクリック時
+        btnCurrent.addEventListener('click', function() {
+            isCurrentStudent = true;
+            // CSSに合わせて flex または block に設定
+            if(uploadArea) uploadArea.style.display = 'flex'; 
+            if(uploadNote) uploadNote.style.display = 'block';
+        });
+    }
  
  
  // ─── トグル切り替え ───
@@ -62,6 +102,7 @@ const form = document.querySelector('form');
     btn.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
+
 
   // ─── ファイルアップロード プレビュー ───
   const fileInput = document.getElementById('fileInput');
