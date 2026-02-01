@@ -281,6 +281,27 @@
   }
   .btn-login:active { transform: translateY(1px); }
 
+/* ログイン画面への切り替えリンク */
+.switch-login {
+  margin-top: 20px;       /* 上の余白 (mt-5相当) */
+  text-align: center;     /* 中央揃え (text-center) */
+  font-size: 14px;        /* 文字サイズ (text-sm) */
+  color: #6b7280;         /* 文字色グレー (text-gray-500) */
+}
+
+/* リンクのデザイン */
+.switch-login a {
+  color: inherit;         /* 親のグレー色を引き継ぐ */
+  text-decoration: none;  /* 下線を消す */
+  font-weight: bold;      /* 少し太くする */
+}
+
+/* マウスを乗せた時の動き (hover:underline) */
+.switch-login a:hover {
+  text-decoration: underline; /* 下線を出す */
+  color: #2563eb;             /* ホバー時は青色にする */
+}
+
   /* ─── Footer note ─── */
   .footer-note {
     text-align: center;
@@ -302,6 +323,9 @@
     font-size: 11px;
     color: #b0b8c4;
   }
+
+
+
 
   /* ─── Responsive ─── */
   @media (max-width: 520px) {
