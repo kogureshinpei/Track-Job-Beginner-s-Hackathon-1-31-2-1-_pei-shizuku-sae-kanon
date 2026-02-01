@@ -417,3 +417,130 @@ body {
     .page-title { font-size: 26px; }
     header { padding: 0 20px; }
   }
+  /* プロフィール表示用スタイル */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profile-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.profile-item {
+  background: var(--bg-page);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  transition: all 0.2s ease;
+}
+
+.profile-item:hover {
+  border-color: var(--blue-border);
+  background: var(--blue-light);
+}
+
+.profile-item-full {
+  background: var(--bg-page);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  transition: all 0.2s ease;
+}
+
+.profile-item-full:hover {
+  border-color: var(--blue-border);
+  background: var(--blue-light);
+}
+
+.profile-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.label-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--blue-primary);
+}
+
+.profile-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.status-current {
+  background: var(--blue-light);
+  color: var(--blue-primary);
+  border: 1.5px solid var(--blue-border);
+}
+
+.profile-actions {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.btn-edit {
+  width: 100%;
+  padding: 14px 24px;
+  background: white;
+  color: var(--blue-primary);
+  border: 1.5px solid var(--blue-primary);
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-edit:hover {
+  background: var(--blue-primary);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13,122,255,0.3);
+}
+
+.btn-edit svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .profile-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .profile-value {
+    font-size: 16px;
+  }
+}
