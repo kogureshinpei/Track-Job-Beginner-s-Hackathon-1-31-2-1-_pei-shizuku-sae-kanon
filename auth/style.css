@@ -332,3 +332,22 @@
     .card { padding: 28px 20px 24px; }
     .row { flex-direction: column; gap: 0; }
   }
+.logo-icon {
+  width: 100px;         /* 幅はそのまま */
+  height: 40px;         /* 上下10pxずつ削った後の高さ */
+  overflow: hidden;      /* はみ出た部分を隠す */
+  background: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  /* 画像を上に10px移動させることで、結果的に上下が隠れる */
+  margin-top: 0; 
+  position: relative;
+  top: 0; /* 必要に応じて微調整 */
+}

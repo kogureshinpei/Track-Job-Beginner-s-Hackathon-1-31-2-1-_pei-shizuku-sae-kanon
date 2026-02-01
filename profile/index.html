@@ -1,156 +1,200 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>プロフィール - 大学プラットフォーム</title>
-<link rel="stylesheet" href="./style.css">
-<script src="./script.js" defer></script>
-</head>
-<body>
-
-<!-- Header -->
-<header class="header">
-  <div class="header-left">
-    <div class="logo">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="3" width="18" height="18" rx="2" fill="#1E88E5"/>
-        <path d="M8 8L16 16M16 8L8 16" stroke="white" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>プロフィール - 大学プラットフォーム</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-icon">
+      <img src="../img/1-b957b55c.png" alt="ロゴ">
     </div>
-    <h1 class="site-title">キャンバスシェア</h1>
-  </div>
-  <nav class="header-nav">
-    <a href="./index.html" class="nav-link active">マイページ</a>
-    <a href="../template/index.html" class="nav-link">時間割テンプレート</a>
-    <a href="../search/index.html" class="nav-link">授業詳細</a>
-    <a href="../upload/index.html" class="nav-link"><span class="icon-plus">⊕</span> 投稿作成</a>
-    <a href="../auth/login_signup.html" class="logout-btn">ログアウト</a>
-  </nav>
-  <div class="header-right">
-    <div class="user-avatar"></div>
-  </div>
-</header>
+        <h1 class="site-title">モデリ</h1>
+      </div>
+      <nav class="header-nav">
+        <a href="./index.html" class="nav-link active">マイページ</a>
+        <a href="../template/index.html" class="nav-link">時間割テンプレート</a>
+        <a href="../search/index.html" class="nav-link">授業詳細</a>
+        <a href="../upload/index.html" class="nav-link"
+          ><span class="icon-plus">⊕</span> 投稿作成</a
+        >
+        <a href="../auth/login_signup.html" class="logout-btn">ログアウト</a>
+      </nav>
+      <div class="header-right">
+        <div class="user-avatar"></div>
+      </div>
+    </header>
 
-<!-- Main Content -->
-<main>
-  <div class="page-header">
-    <h1 class="page-title">プロフィール</h1>
-    <p class="page-subtitle">あなたの基本情報</p>
-  </div>
+    <!-- Main Content -->
+    <main>
+      <div class="page-header">
+        <h1 class="page-title">プロフィール</h1>
+        <p class="page-subtitle">あなたの基本情報</p>
+      </div>
 
-  <div class="form-card">
-    <!-- プロフィール情報表示 -->
-    <div class="profile-section">
-      <div class="profile-row">
-        <div class="profile-item">
-          <div class="profile-label">
-            <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-              <circle cx="12" cy="7" r="4"/>
-            </svg>
-            氏名
+      <div class="form-card">
+        <!-- プロフィール情報表示 -->
+        <div class="profile-section">
+          <div class="profile-row">
+            <div class="profile-item">
+              <div class="profile-label">
+                <svg
+                  class="label-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                氏名
+              </div>
+              <div class="profile-value">山田 太郎</div>
+            </div>
+
+            <div class="profile-item">
+              <div class="profile-label">
+                <svg
+                  class="label-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" />
+                  <line x1="8" y1="2" x2="8" y2="6" />
+                  <line x1="3" y1="10" x2="21" y2="10" />
+                </svg>
+                学年
+              </div>
+              <div class="profile-value">1年生</div>
+            </div>
           </div>
-          <div class="profile-value">山田 太郎</div>
+
+          <div class="profile-item-full">
+            <div class="profile-label">
+              <svg
+                class="label-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              大学名
+            </div>
+            <div class="profile-value">青山学院大学</div>
+          </div>
+
+          <div class="profile-row">
+            <div class="profile-item">
+              <div class="profile-label">
+                <svg
+                  class="label-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                </svg>
+                学部
+              </div>
+              <div class="profile-value">理工学部</div>
+            </div>
+
+            <div class="profile-item">
+              <div class="profile-label">
+                <svg
+                  class="label-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                学科
+              </div>
+              <div class="profile-value">化学・生命科学科</div>
+            </div>
+          </div>
+
+          <div class="profile-item-full">
+            <div class="profile-label">
+              <svg
+                class="label-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              現在の状況
+            </div>
+            <div class="profile-value">
+              <span class="status-badge status-current">📚 在校生</span>
+            </div>
+          </div>
         </div>
-        
-        <div class="profile-item">
-          <div class="profile-label">
-            <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-              <line x1="16" y1="2" x2="16" y2="6"/>
-              <line x1="8" y1="2" x2="8" y2="6"/>
-              <line x1="3" y1="10" x2="21" y2="10"/>
+
+        <!-- 編集ボタン -->
+        <div class="profile-actions">
+          <button class="btn-edit">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+              />
+              <path
+                d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+              />
             </svg>
-            学年
-          </div>
-          <div class="profile-value">1年生</div>
+            プロフィールを編集
+          </button>
         </div>
       </div>
 
-      <div class="profile-item-full">
-        <div class="profile-label">
-          <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-            <polyline points="9 22 9 12 15 12 15 22"/>
-          </svg>
-          大学名
-        </div>
-        <div class="profile-value">青山学院大学</div>
-      </div>
-
-      <div class="profile-row">
-        <div class="profile-item">
-          <div class="profile-label">
-            <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-            </svg>
-            学部
+      <!-- Features -->
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <div class="feature-title">同じ学部の人と繋がる</div>
+          <div class="feature-desc">
+            同級の授業を取っている同学年とつながろう
           </div>
-          <div class="profile-value">理工学部</div>
         </div>
-        
-        <div class="profile-item">
-          <div class="profile-label">
-            <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12 6 12 12 16 14"/>
-            </svg>
-            学科
-          </div>
-          <div class="profile-value">化学・生命科学科</div>
+        <div class="feature-card">
+          <div class="feature-icon">🧡</div>
+          <div class="feature-title">履修のコツをシェア</div>
+          <div class="feature-desc">先輩のリアルな情報を基準にできます</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <div class="feature-title">安心の匿名性</div>
+          <div class="feature-desc">ニックネームで友達に情報を提供可能です</div>
         </div>
       </div>
+    </main>
 
-      <div class="profile-item-full">
-        <div class="profile-label">
-          <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-            <polyline points="22 4 12 14.01 9 11.01"/>
-          </svg>
-          現在の状況
-        </div>
-        <div class="profile-value">
-          <span class="status-badge status-current">📚 在校生</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 編集ボタン -->
-    <div class="profile-actions">
-      <button class="btn-edit">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
-          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-        </svg>
-        プロフィールを編集
-      </button>
-    </div>
-  </div>
-
-  <!-- Features -->
-  <div class="features">
-    <div class="feature-card">
-      <div class="feature-icon">👥</div>
-      <div class="feature-title">同じ学部の人と繋がる</div>
-      <div class="feature-desc">同級の授業を取っている同学年とつながろう</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🧡</div>
-      <div class="feature-title">履修のコツをシェア</div>
-      <div class="feature-desc">先輩のリアルな情報を基準にできます</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🛡️</div>
-      <div class="feature-title">安心の匿名性</div>
-      <div class="feature-desc">ニックネームで友達に情報を提供可能です</div>
-    </div>
-  </div>
-</main>
-
-<!-- Footer -->
-<footer>© 2024 大学プラットフォーム. All rights reserved.</footer>
-
-</body>
+    <!-- Footer -->
+    <footer>© 2024 大学プラットフォーム. All rights reserved.</footer>
+  </body>
 </html>
