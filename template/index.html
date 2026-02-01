@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>キャンバスシェア</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="../uni_filter.js" defer></script>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-icon">
+      <img src="../img/1-b957b55c.png" alt="ロゴ">
+    </div>
+        <h1 class="site-title"></h1>
+      </div>
+      <nav class="header-nav">
+        
+        <a href="./index.html" class="nav-link active">時間割テンプレート</a>
+        <a href="../search/index.html" class="nav-link">授業詳細</a>
+        <a href="../upload/index.html" class="nav-link">
+          <span class="icon-plus">⊕</span> 投稿作成
+        </a>
+        <a href="../profile/index.html" class="nav-link">マイページ</a>
+        <a href="../auth/login_signup.html" class="logout-btn">ログアウト</a>
+      </nav>
+      <div class="header-right">
+        <div class="user-avatar"></div>
+      </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+      <!-- ウェルカムセクション -->
+      <section class="welcome-section">
+        <h2 class="welcome-title">
+          時間割のテンプレートを検索して、履修登録をスムーズに進めよう！
+        </h2>
+        <p class="welcome-subtitle">
+          細かい授業情報を確認したい場合は、上部メニューの「授業詳細」から検索してください。
+        </p>
+      </section>
+
+      <div class="content-wrapper">
+        <!-- 左サイドバー：検索フィルター -->
+        <aside class="sidebar">
+          <div class="search-panel">
+            <h3 class="search-title">
+              <span class="search-icon">🔍</span>
+              時間割を検索・作成
+            </h3>
+            <div class="input-group filter-group">
+              <label class="input-label filter-label">大学名</label>
+              <select class="search-input filter-select" id="universitySelect">
+                <option value="">大学を選択してください</option>
+                <option value="早稲田大学">早稲田大学</option>
+                <option value="慶應義塾大学">慶應義塾大学</option>
+                <option value="明治大学">明治大学</option>
+                <option value="青山学院大学">青山学院大学</option>
+                <option value="立教大学">立教大学</option>
+                <option value="中央大学">中央大学</option>
+                <option value="法政大学">法政大学</option>
+              </select>
+            </div>
+
+            <div class="input-group filter-group">
+              <label class="input-label filter-label">学部</label>
+              <select
+                class="search-input filter-select"
+                id="facultySelect"
+                disabled
+              >
+                <option value="">学部を選択してください</option>
+              </select>
+            </div>
+
+            <div class="input-group filter-group">
+              <label class="input-label filter-label">学科</label>
+              <select
+                class="search-input filter-select"
+                id="departmentSelect"
+                disabled
+              >
+                <option value="">学科を選択してください</option>
+              </select>
+            </div>
+
+            <!-- 学年選択 -->
+            <div class="filter-group">
+              <label class="filter-label">学年</label>
+              <div class="year-buttons">
+                <button class="year-btn active">1年</button>
+                <button class="year-btn">2年</button>
+                <button class="year-btn">3年</button>
+                <button class="year-btn">4年</button>
+              </div>
+            </div>
+
+            <!-- 検索ボタン -->
+            <button class="search-btn">
+              <span class="filter-icon">▼</span>
+              条件を適用して検索
+            </button>
+          </div>
+        </aside>
+
+        <!-- メインコンテンツエリア -->
+        <div class="main-area">
+          <!-- テンプレートヘッダー -->
+          <div class="templates-header">
+            <h3 class="templates-title">最新のテンプレート</h3>
+            <div class="view-toggle">
+              <button class="view-btn active">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <rect x="2" y="2" width="7" height="7" rx="1" />
+                  <rect x="11" y="2" width="7" height="7" rx="1" />
+                  <rect x="2" y="11" width="7" height="7" rx="1" />
+                  <rect x="11" y="11" width="7" height="7" rx="1" />
+                </svg>
+              </button>
+              <button class="view-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <rect x="2" y="3" width="16" height="2" rx="1" />
+                  <rect x="2" y="9" width="16" height="2" rx="1" />
+                  <rect x="2" y="15" width="16" height="2" rx="1" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- テンプレートグリッド -->
+          <div class="templates-grid">
+            <!-- テンプレートカード1 -->
+            <div class="template-card">
+              <div class="timetable-preview">
+                <img
+                  class="timetable-image"
+                  src="./img/1_青学国際政治経済、国際経済学科_前期.jpg"
+                  alt="時間割テンプレート 1"
+                />
+              </div>
+              <div class="card-content">
+                <div class="card-header">
+                  <h4 class="card-title">
+                    青学 国際政治経済学部国際経済学科 1年 前期
+                  </h4>
+                  <span class="badge badge-full">フル単位</span>
+                </div>
+                <div class="card-user">
+                  <div class="user-avatar-small"></div>
+                  <span class="username">@tanaka_agu</span>
+                </div>
+                <div class="card-footer">
+                  <div class="card-stats"></div>
+                  <button class="save-btn">保存 📌</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- テンプレートカード2 -->
+            <div class="template-card">
+              <div class="timetable-preview">
+                <img
+                  class="timetable-image"
+                  src="./img/1_青学文学部英米_前期.jpg"
+                  alt="時間割テンプレート 2"
+                />
+              </div>
+              <div class="card-content">
+                <div class="card-header">
+                  <h4 class="card-title">
+                    青学 文学部英米文学科 1年 前期 専門重視
+                  </h4>
+                  <span class="badge badge-units">24単位</span>
+                </div>
+                <div class="card-user">
+                  <div class="user-avatar-small"></div>
+                  <span class="username">@yuki_eibei</span>
+                </div>
+                <div class="card-footer">
+                  <div class="card-stats"></div>
+                  <button class="save-btn">保存 📌</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- テンプレートカード3 -->
+            <div class="template-card">
+              <div class="timetable-preview">
+                <img
+                  class="timetable-image"
+                  src="./img/2_青学化学＿前期.jpg"
+                  alt="時間割テンプレート 3"
+                />
+              </div>
+              <div class="card-content">
+                <div class="card-header">
+                  <h4 class="card-title">
+                    青学 理工学部化学・生命学科 2年 ゼミ中心
+                  </h4>
+                  <span class="badge badge-efficient">効率重視</span>
+                </div>
+                <div class="card-user">
+                  <div class="user-avatar-small"></div>
+                  <span class="username">@ken_chemistry</span>
+                </div>
+                <div class="card-footer">
+                  <div class="card-stats"></div>
+                  <button class="save-btn">保存 📌</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 新規作成カード -->
+            <div class="template-card create-card">
+              <div class="create-content">
+                <button class="create-btn">
+                  <span class="plus-icon">+</span>
+                </button>
+                <p class="create-text">
+                  新しい時間割を投稿して<br />シェアする
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- もっと見るボタン -->
+          <div class="load-more">
+            <button class="load-more-btn">もっと見る</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

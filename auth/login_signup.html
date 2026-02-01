@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>学内ポータル – 新規会員登録</title>
+<link rel="stylesheet" href="./style.css">
+<script src="./script.js" defer></script>
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo">
+    <div class="logo-icon">
+      <img src="../img/1-b957b55c.png" alt="ロゴ">
+    </div>
+    
+  </a>
+  <nav>
+    <a href="#">設定</a>
+    <a href="#">プライバシー</a>
+    <a href="#" class="btn-help">ヘルプ</a>
+  </nav>
+</header>
+
+<main>
+  <div class="card">
+    <h1 class="card-title">コミュニティへ登録</h1>
+    <p class="card-sub">情報を入力し、学内のネットワークに参加しましょう。</p>
+
+    <form action="#" method="post">
+      
+      <div class="field">
+        <label class="field-label">職員の区分：</label>
+        <div class="toggle-group">
+          <button type="button" class="active" id="btn-new" onclick="setToggle(this)">新入生</button>
+          <button type="button" id="btn-current" onclick="setToggle(this)">在学生</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">メールアドレス</label>
+        <input class="input" type="email" id="email" placeholder="example@aoyama.jp" />
+      </div>
+
+      <div class="field">
+        <label class="field-label">パスワード</label>
+        <input class="input" type="password" id="password" placeholder="パスワードを入力" />
+      </div>
+
+      <div class="field">
+        <label class="field-label">氏名</label>
+        <input class="input" type="text" id="name" placeholder="例：山田太郎" />
+      </div>
+
+      <div class="upload-area" id="upload-area" onclick="document.getElementById('fileInput').click()" style="display: none;">
+        <div class="upload-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 7V3.5L18.5 9H13zM8 17h8v2H8zm0-4h8v2H8z"/></svg>
+        </div>
+        <div class="upload-label">学生証などの画像をアップロード</div>
+        <div class="upload-hint">PNG, JPG 最大 10MB</div>
+        <input id="fileInput" type="file" accept=".png,.jpg,.jpeg" style="display:none" />
+      </div>
+      <p class="upload-note" id="upload-note" style="display: none;">
+        提出する画像には、学生証など在籍が証明できる書類が必要です。
+      </p>
+
+      <button type="submit" class="btn-login">新規会員登録</button>
+
+      <div class="switch-login">
+        <a href="index.html">アカウントをお持ちの方はこちら</a>
+      </div>
+
+      <p class="footer-note">
+        登録することで、サイトの<a href="#">利用規則</a>と<a href="#">プライバシーポリシー</a>に同意することとなります。
+      </p>
+
+    </form>
+    </div>
+</main>
+
+<footer>© 2026 学内ポータル. All rights reserved.</footer>
+
+</body>
+</html>
