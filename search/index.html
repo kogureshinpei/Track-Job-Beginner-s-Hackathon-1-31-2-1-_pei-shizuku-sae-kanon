@@ -118,7 +118,6 @@
             </button>
         </div>
 
-        <!-- Course List -->
         <div class="course-list">
             <div class="course-card selected">
                 <button class="bookmark-btn active">📌</button>
@@ -171,8 +170,7 @@
             </div>
         </div>
 
-        <!-- Detail Panel -->
-        <div class="detail-panel">
+        <div class="detail-panel active">
             <div class="detail-header">
                 <div>
                     <div class="course-code">コースID: PS102-M1</div>
@@ -214,7 +212,7 @@
                 <div class="tab" onclick="switchTab(1)">💬 学生の口コミ</div>
             </div>
             
-            <div class="tab-content active" id="tab-0">
+            <div class="tab-content active">
                 <div class="evaluation-item">
                     <div class="eval-header">
                         <span class="eval-type">📝 テスト形式</span>
@@ -225,49 +223,114 @@
                     </div>
                     <p class="eval-description">期末期間中に実施。講義内の重要キーワードを使用した論述問題。</p>
                 </div>
-                
                 <div class="evaluation-item">
                     <div class="eval-header">
                         <span class="eval-type">📄 レポート</span>
                         <span class="eval-percentage">30%</span>
                     </div>
-                    <p class="eval-description">1500文字程度。学期末にA4から2頁程度、特定の政治思想家を自由な視点から分析。</p>
+                    <p class="eval-description">1500文字程度。学期末にA4から2頁程度。</p>
                 </div>
-                
                 <div class="evaluation-item">
                     <div class="eval-header">
-                        <span class="eval-type">👥 平常点 (出席)</span>
+                        <span class="eval-type">👥 平常点</span>
                         <span class="eval-percentage">30%</span>
                     </div>
-                    <p class="eval-description">出席 + ミニレポート。毎回の出席確認と、講義終了時の短い感想文(200字程度)。</p>
+                    <p class="eval-description">毎回の出席確認とミニレポート。</p>
                 </div>
             </div>
             
-            <div class="tab-content" id="tab-1">
+            <div class="tab-content">
                 <div class="review-card">
                     <div class="review-header">
                         <span class="review-author">法学部生 3年</span>
                         <span class="review-date">2023年度受講</span>
                     </div>
-                    <p class="review-text">「講義は非常に論理的で分かりやすい。試験は記述中心だが、配布資料をしっかり読み込めば高得点が狙える。」</p>
+                    <p class="review-text">「講義は非常に論理的で分かりやすい。」</p>
                 </div>
-                
-                <div class="review-card">
-                    <div class="review-header">
-                        <span class="review-author">法学部 2年</span>
-                        <span class="review-date">2023年度受講</span>
-                    </div>
-                    <p class="review-text">「毎回のミニレポートが少し大変だが、その分外部の最難関試験(就職など)には準備的。GPAを稼ぎたい人にもおすすめ。」</p>
-                </div>
-                
                 <button class="show-more-btn">すべての口コミを見る (128件)</button>
             </div>
             
             <div class="warning-box">
-                <div class="warning-title">
-                    ⚠️ 履修上の重要注意
+                <div class="warning-title">⚠️ 履修上の重要注意</div>
+                <p class="warning-text">3回以上の無断欠席は単位取得が難しくなります。</p>
+            </div>
+        </div>
+
+        <div class="detail-panel">
+            <div class="detail-header">
+                <div>
+                    <div class="course-code">コースID: EC101-B2</div>
+                    <div class="course-year-badge">2024年度 春学期</div>
                 </div>
-                <p class="warning-text">出席が評価の50%を占めるため、3回以上の無断欠席は単位取得が難しくなります。期末レポートの提出期限は1分でも過ぎると受理されません。</p>
+            </div>
+            
+            <h1 class="detail-title">ミクロ経済学入門</h1>
+            
+            <div class="detail-meta">
+                <div class="meta-item">👨‍🏫 田中 美咲 教授</div>
+                <div class="meta-item">📅 月曜 2限 (通年)</div>
+                <div class="meta-item">📍 8号館 106教室</div>
+            </div>
+            
+            <button class="add-to-schedule-btn">
+                ✅ 時間割に追加
+            </button>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-box-label">単位取得率</div>
+                    <div class="stat-box-value" style="color: #ff9800;">82.5%</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box-label">平均GPA</div>
+                    <div class="stat-box-value" style="color: #1e88e5;">2.85</div>
+                    <div style="font-size: 0.75em; color: #999;">平均通り</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-box-label">学生人気度</div>
+                    <div class="stat-box-value stars">★★★☆☆</div>
+                    <div style="font-size: 0.75em; color: #999;">85人のレビュー</div>
+                </div>
+            </div>
+            
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab(0)">📊 成績評価の詳細</div>
+                <div class="tab" onclick="switchTab(1)">💬 学生の口コミ</div>
+            </div>
+            
+            <div class="tab-content active">
+                <div class="evaluation-item">
+                    <div class="eval-header">
+                        <span class="eval-type">📝 中間テスト</span>
+                        <span class="eval-percentage">40%</span>
+                    </div>
+                    <p class="eval-description">計算問題中心。マークシート形式。</p>
+                </div>
+                <div class="evaluation-item">
+                    <div class="eval-header">
+                        <span class="eval-type">📝 期末テスト</span>
+                        <span class="eval-percentage">50%</span>
+                    </div>
+                    <p class="eval-description">範囲全般からの出題。計算と用語定義。</p>
+                </div>
+                <div class="evaluation-item">
+                    <div class="eval-header">
+                        <span class="eval-type">👥 平常点</span>
+                        <span class="eval-percentage">10%</span>
+                    </div>
+                    <p class="eval-description">出席のみ。</p>
+                </div>
+            </div>
+            
+            <div class="tab-content">
+                <div class="review-card">
+                    <div class="review-header">
+                        <span class="review-author">政経学部 1年</span>
+                        <span class="review-date">2023年度受講</span>
+                    </div>
+                    <p class="review-text">「数学が苦手だと少しきついかも。過去問必須。」</p>
+                </div>
+                <button class="show-more-btn">すべての口コミを見る (85件)</button>
             </div>
         </div>
     </div>
