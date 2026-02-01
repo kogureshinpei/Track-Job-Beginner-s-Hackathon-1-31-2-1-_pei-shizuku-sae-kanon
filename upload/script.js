@@ -212,3 +212,8 @@ logoutBtn.addEventListener('click', function() {
         // window.location.href = '/login';
     }
 });
+
+document.querySelector('.btn-primary').addEventListener('click', function() {
+    // submit();
+    alert('投稿されました！');
+});

@@ -6,6 +6,7 @@
     <title>履修登録ナビ - コース検索</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
+    <script src="../uni_filter.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -42,57 +43,32 @@
                     <input type="text" class="search-input" placeholder="授業名・教授名・内容など">
                 </div>
                 <div class="input-group">
-                    <label class="input-label">大学・キャンパス</label>
-                    <select class="search-input" id="campus-select">
-                        <option value="">🎓 指定なし</option>
-
-                        <optgroup label="早稲田大学">
-                            <option value="waseda_waseda">早稲田キャンパス（早稲田）</option>
-                            <option value="waseda_toyama">戸山キャンパス（早稲田）</option>
-                            <option value="waseda_nishiwaseda">西早稲田キャンパス（西早稲田）</option>
-                            <option value="waseda_tokorozawa">所沢キャンパス（所沢）</option>
-                            <option value="waseda_higashifushimi">東伏見キャンパス（東伏見）</option>
-                            <option value="waseda_kitamachi">北九州キャンパス（北九州）</option>
-                        </optgroup>
-
-                        <optgroup label="慶應義塾大学">
-                            <option value="keio_mita">三田キャンパス（三田）</option>
-                            <option value="keio_hiyoshi">日吉キャンパス（日吉）</option>
-                            <option value="keio_yagami">矢上キャンパス（矢上）</option>
-                            <option value="keio_shonan">湘南藤沢キャンパス（SFC）</option>
-                            <option value="keio_shinagawa">芝共立キャンパス（芝共立）</option>
-                        </optgroup>
-
-                        <optgroup label="明治大学">
-                            <option value="meiji_surugadai">駿河台キャンパス（御茶ノ水）</option>
-                            <option value="meiji_izumi">和泉キャンパス（明大前）</option>
-                            <option value="meiji_ikuta">生田キャンパス（生田）</option>
-                            <option value="meiji_nakano">中野キャンパス（中野）</option>
-                        </optgroup>
-
-                        <optgroup label="青山学院大学">
-                            <option value="agu_aoyama">青山キャンパス（渋谷）</option>
-                            <option value="agu_sagamihara">相模原キャンパス（相模原）</option>
-                        </optgroup>
-
-                        <optgroup label="立教大学">
-                            <option value="rikkyo_ikebukuro">池袋キャンパス（池袋）</option>
-                            <option value="rikkyo_niiza">新座キャンパス（新座）</option>
-                        </optgroup>
-
-                        <optgroup label="中央大学">
-                            <option value="chuo_tama">多摩キャンパス（多摩）</option>
-                            <option value="chuo_korakuen">後楽園キャンパス（後楽園）</option>
-                            <option value="chuo_ichigaya">市ヶ谷田町キャンパス（市ヶ谷田町）</option>
-                        </optgroup>
-
-                        <optgroup label="法政大学">
-                            <option value="hosei_ichigaya">市ヶ谷キャンパス（市ヶ谷）</option>
-                            <option value="hosei_koganei">小金井キャンパス（小金井）</option>
-                            <option value="hosei_tama">多摩キャンパス（多摩）</option>
-                        </optgroup>
-                    </select>
-                </div>
+    <label class="input-label">大学名</label>
+    <select class="search-input" id="universitySelect">
+      <option value="">大学を選択してください</option>
+      <option value="早稲田大学">早稲田大学</option>
+      <option value="慶應義塾大学">慶應義塾大学</option>
+      <option value="明治大学">明治大学</option>
+      <option value="青山学院大学">青山学院大学</option>
+      <option value="立教大学">立教大学</option>
+      <option value="中央大学">中央大学</option>
+      <option value="法政大学">法政大学</option>
+    </select>
+  </div>
+  
+  <div class="input-group">
+    <label class="input-label">学部</label>
+    <select class="search-input" id="facultySelect" disabled>
+      <option value="">学部を選択してください</option>
+    </select>
+  </div>
+  
+  <div class="input-group">
+    <label class="input-label">学科</label>
+    <select class="search-input" id="departmentSelect" disabled>
+      <option value="">学科を選択してください</option>
+    </select>
+  </div>
                 <div class="input-group">
                     <label class="input-label">曜日</label>
                     <select class="search-input" id="weekday-select">
@@ -122,8 +98,8 @@
             </div>
             <div class="filters">
                 <div class="filter-chip active">すべて</div>
-                <div class="filter-chip">出席なし</div>
-                <div class="filter-chip">対面のみ</div>
+                <div class="filter-chip">出席点なし</div>
+                <div class="filter-chip">対面</div>
                 <div class="filter-chip">オンライン</div>
                 <div class="filter-chip">テスト中心</div>
                 <div class="filter-chip">レポート中心</div>
